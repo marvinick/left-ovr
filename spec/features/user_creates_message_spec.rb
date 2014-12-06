@@ -6,5 +6,6 @@ feature "User creates message" do
   scenario "with valid input" do
     visit messages_path
     click_link "New Message"
+    visit new_message_path
   end
 end

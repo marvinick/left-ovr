@@ -44,6 +44,11 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  RSpec.configure do |c|
+    c.expose_current_running_example_as :example
+  end
+
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
