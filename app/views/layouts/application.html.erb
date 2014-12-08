@@ -8,8 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
-  <%= nav_bar :static => :top, :responsive => true, :brand => "leftOvr", :brand_link => root_path  %>
-  <%= bootstrap_flash %>
+  <div class="nav">
+  <%= nav_bar :static => :top, :responsive => true, :brand => "leftOvr", :brand_link => root_path do %>
+    <%= menu_group do %>
+          <%= menu_item "Home", root_path %>
+          <%= menu_divider %>
+          <%= menu_item "Logout" %>
+          <%= menu_item "Cities"%>
+          <%= menu_item "News"%>
+          <%= menu_item "About Us" %>
+          <%= menu_item "Contact" %>
+      <% end %>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>
