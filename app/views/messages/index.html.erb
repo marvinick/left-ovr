@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +14,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= link_to message.id, message_path(message) %></td>
-        <td><%= message.title %></td>
+        <td><%= link_to message.title, message_path(message) %></td>
         <td><%= message.content %></td>
         <td><%=l message.created_at %></td>
         <td>
