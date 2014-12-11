@@ -11,13 +11,10 @@
   <div class="nav">
   <%= nav_bar :static => :top, :responsive => true, :brand => "leftOvr", :brand_link => root_path do %>
     <%= menu_group do %>
-          <%= menu_item "Home", root_path %>
           <%= menu_divider %>
-          <%= menu_item "Logout" %>
-          <%= menu_item "Cities"%>
-          <%= menu_item "News"%>
-          <%= menu_item "About Us" %>
-          <%= menu_item "Contact" %>
+          <%= menu_item "Members", users_path %>
+          <%= menu_item "Messages", messages_path %>
+          <%= menu_item "Articles"%>
       <% end %>
     <% end %>
   </div>
