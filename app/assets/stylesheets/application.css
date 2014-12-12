@@ -25,3 +25,8 @@ body {
 .nav {
   padding-top: 2px;
 }
+
+label {
+  width: 30%;
+  text-align: left;
+}
