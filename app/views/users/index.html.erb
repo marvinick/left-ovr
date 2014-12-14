@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
       <% if logged_in? %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
       <% end %>

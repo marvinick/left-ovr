@@ -5,17 +5,19 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:restaurant) %></th>
+      <th><%= model_class.human_attribute_name(:Name) %></th>
       <th><%= model_class.human_attribute_name(:Food) %></th>
-      <th><%= model_class.human_attribute_name(:Day) %></th>
+      <th><%= model_class.human_attribute_name(:Date) %></th>
+      <% if logged_in? %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @messages.each do |message| %>
       <tr>
         <td><%= link_to message.title, message_path(message) %></td>
-        <td><%= message.content %></td>
+        <td><%= truncate message.content, length: 60 %></td>
         <td><%=l message.created_at %></td>
         <% if logged_in? %>
         <td>
