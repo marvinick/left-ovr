@@ -12,7 +12,6 @@
   <%= nav_bar :static => :top, :responsive => true, :brand => "[left+Ovr]", :brand_link => root_path do %>
     <%= menu_group do %>
           <%= menu_divider %>
-          <%= menu_item "Members", users_path %>
           <%= menu_item "Messages", messages_path %>
           <% if logged_in? %>
             <%= menu_item "Log Out", logout_path %>

@@ -5,20 +5,21 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <% if logged_in? %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %></td>
+        <td><%= link_to user.name, user_path(user) %></td>
         <td><%= user.email %></td>
         <td><%=l user.created_at %></td>
+        <% if logged_in? %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_user_path(user), :class => 'btn btn-default btn-xs' %>
@@ -28,6 +29,7 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
