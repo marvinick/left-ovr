@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :messages
+  resources :messages do
+    resources :comments
+  end
   root to: "messages#index"
   resources :users
   get '/login', to: 'sessions#new'
