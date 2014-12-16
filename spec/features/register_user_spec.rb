@@ -5,7 +5,7 @@ feature 'Register User' do
 
   scenario "With valid input" do
     visit users_path
-    click_link "Add User"
+    click_link "New"
     visit new_user_path
     fill_in "Name", with: user.name
     fill_in "Email", with: user.email
@@ -16,7 +16,7 @@ feature 'Register User' do
 
   scenario "With invalid input" do
     visit users_path
-    click_link "Add User"
+    click_link "New"
     visit new_user_path
     fill_in "Name", with: user.name
     fill_in "Password", with: user.password_digest

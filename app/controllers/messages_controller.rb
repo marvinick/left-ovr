@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @comment = Comment.find(params[:id])
+
   end
 
   def edit; end
@@ -49,6 +49,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:title, :content)
+    params.require(:message).permit(:title, :content, :link)
   end
 end

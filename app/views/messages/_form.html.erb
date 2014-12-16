@@ -11,6 +11,12 @@
       <%= f.text_area :content, rows: 3, :class => 'text_area' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :link, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :link, :class => 'text_field' %>
+    </div>
+  </div>
   <br/>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

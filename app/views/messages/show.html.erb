@@ -8,23 +8,22 @@
   <dd><%= @message.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
   <dd><%= @message.content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:link) %>:</strong></dt>
+  <dd><%= link_to @message.link, "http://#{@message.link}" %></dd>
 </dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-      messages_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-      edit_message_path(@message), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-      message_path(@message),
-      :method => 'delete',
-      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-      :class => 'btn btn-danger' %>
-</div>
+<% if logged_in? %>
+  <div class="form-actions">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+        messages_path, :class => 'btn'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_message_path(@message), :class => 'btn' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        message_path(@message),
+        :method => 'delete',
+        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+        :class => 'btn btn-danger' %>
+  </div>
+<% end %>
 
-<div class="col-md-4">
-<% form_for @comment do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <% end %>
-</div>
+
