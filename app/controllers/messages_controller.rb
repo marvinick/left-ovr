@@ -28,6 +28,7 @@ class MessagesController < ApplicationController
 
   def update
     if @message.update(message_params)
+      flash[:notice] = "Message was updated"
       redirect_to messages_path
     else
       render :edit
