@@ -1,12 +1,12 @@
 require "spec_helper"
 
 feature 'Register User' do
-  let!(:user) {User.new(name: "Marvin", email: "marvki@gmail.com", password_digest: "abcd") }
+  let(:user) {User.new(name: "Marvin", email: "marvki@gmail.com", password_digest: "abcd") }
 
   scenario "With valid input" do
     visit users_path
     click_link "New"
-    visit new_user_path
+    visit(new_user_path)
     fill_in "Name", with: user.name
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password_digest
