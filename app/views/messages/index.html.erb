@@ -1,7 +1,7 @@
 <%- model_class = Message -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+</
 <table class="table table-striped">
   <thead>
     <tr>
@@ -18,7 +18,7 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= link_to message.title, message_path(message) %></td>
-        <td><%= link_to message.link, "http://#{www.message.link}" %></td>
+        <td><%= link_to message.link, "http://#{message.link}" %></td>
         <td><%= truncate message.content, length: 60 %></td>
         <td><%=l message.created_at %></td>
         <% if logged_in? %>
