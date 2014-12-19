@@ -1,15 +1,15 @@
 class RespondsController < ApplicationController
-  before_action :require_user, only: [:new, :create, :edit, :vote]
+  before_action :require_user, only: [:new, :create, :edit]
 
   def create
-    @comment = @post.comments.build(params.require(:comment).permit(:body))
-    @comment.user = current_user
+    @crespond = @message.comments.build(params.require(:respond).permit(:body))
+    @respond.user = current_user
 
-    if @comment.save
+    if @respond.save
       flash[:notice] = "Your comment was added"
-      redirect_to post_path(@post)
+      redirect_to message_path(@message)
     else
-      render 'posts/show'
+      render 'messages/show'
     end
   end
 end

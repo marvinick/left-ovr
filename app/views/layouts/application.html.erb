@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="nav">
-  <%= nav_bar :static => :top, :responsive => true, :brand => "[left+Ovr]", :brand_link => root_path do %>
+  <%= nav_bar :fixed => :top, :responsive => true, :brand => "[left+Ovr]", :brand_link => root_path do %>
     <%= menu_group do %>
           <%= menu_divider %>
           <%= menu_item "Messages", messages_path %>
