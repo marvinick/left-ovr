@@ -30,4 +30,5 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'angularjs-rails'
 end
+end
 
