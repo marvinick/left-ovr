@@ -9,6 +9,7 @@ gem 'sdoc', '~> 0.4.0',   group: :doc
 gem 'spring',  group: :development
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'simple_form'
+gem 'carrierwave'
 
 group :test do
   gem 'rspec-rails' , '~> 2.0'
@@ -23,6 +24,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails', '~> 4.0.3'
@@ -30,5 +32,5 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'angularjs-rails'
 end
-end
+
 

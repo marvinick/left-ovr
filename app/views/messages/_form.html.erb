@@ -1,7 +1,9 @@
-<%= simple_form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @message, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <%= f.hidden_field :gallery_id %>
   <%= f.input :title %>
   <%= f.input :content %>
   <%= f.input :link %>
+  <%= f.file_field :image %>
   <br/>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
