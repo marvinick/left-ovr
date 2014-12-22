@@ -10,6 +10,7 @@ gem 'spring',  group: :development
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'simple_form'
 gem 'carrierwave'
+gem "rmagick"
 
 group :test do
   gem 'rspec-rails' , '~> 2.0'
