@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require angular
 //= require_tree .
+
+
+jQuery ->
+  $('#new_painting').fileupload
+    dataType: "script"
