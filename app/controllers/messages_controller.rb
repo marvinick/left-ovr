@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+  class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update, :show, :destroy]
   before_action :require_user, except: [:index, :show]
 
