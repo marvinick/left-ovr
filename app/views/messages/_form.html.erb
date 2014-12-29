@@ -3,7 +3,7 @@
   <%= f.input :title %>
   <%= f.input :content %>
   <%= f.input :link %>
-  <%= f.file_field :image %>
+  <%= f.input :image, as: :file %>
   <br/>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
