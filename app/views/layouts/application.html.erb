@@ -3,35 +3,37 @@
 <head>
   <title>leftOvr</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
-  <div class="nav">
-  <%= nav_bar :static => :top, :responsive => true, :brand => "[left+Ovr]", :brand_link => root_path do %>
-    <%= menu_group do %>
-          <%= menu_divider %>
-          <% if logged_in? %>
-            <%= menu_item "Members", users_path %>
-            <%= menu_item "Log Out", logout_path %>
-          <% else %>
-          <%= menu_item "Login", login_path %>
-          <% end %>
+  <div id="sticky">
+    <div class="nav">
+    <%= nav_bar :responsive => true, :brand => "[left+Ovr]", :brand_link => root_path do %>
+      <%= menu_group do %>
+            <%= menu_divider %>
+            <% if logged_in? %>
+              <%= menu_item "Members", users_path %>
+              <%= menu_item "Log Out", logout_path %>
+            <% else %>
+            <%= menu_item "Login", login_path %>
+            <% end %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   <div class="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-      <a class="close" data-dismiss="alert">x</a>
-      <%= msg  %>
-    </div>
-  <% end %>
-  <!-- Rest of content -->
-</div>
-<div id="container">
-  <%= yield %>
-</div>
-
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">x</a>
+        <%= msg  %>
+      </div>
+    <% end %>
+    <!-- Rest of content -->
+  </div>
+  <div id="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
