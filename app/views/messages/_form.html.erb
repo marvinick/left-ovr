@@ -1,13 +1,14 @@
-<%= simple_form_for @message, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
-
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :link %>
-  <%= f.input :image, as: :file %>
-  <br/>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-      messages_path, :class => 'btn' %>
-  </div>
+<div class="session">
+  <%= simple_form_for @message, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :link %>
+    <%= f.input :image, as: :file %>
+    <br/>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+        messages_path, :class => 'btn' %>
+    </div>
   <% end %>
+</div>

@@ -1,9 +1,10 @@
-<%= simple_form_for @user, :html => { :class => "form-horizontal user" } do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            users_path, :class => 'btn btn-default' %>
-<% end %>
+<div class="session">
+  <%= simple_form_for @user, :html => { :class => "form-horizontal user" } do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              users_path, :class => 'btn btn-default' %>
+  <% end %>
+</div>
