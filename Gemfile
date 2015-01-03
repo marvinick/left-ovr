@@ -12,6 +12,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'simple_form'
 gem 'carrierwave'
 gem "rmagick"
+gem 'font-awesome-sass', '~> 4.2.0'
 
 group :test do
   gem 'rspec-rails' , '~> 2.0'
