@@ -4,8 +4,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<%= image_tag @message.image_url(:thumb).to_s %>
 <dl class="dl-horizontal">
+  <dd><%= image_tag @message.image_url(:thumb).to_s %></dd>
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @message.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
@@ -16,10 +16,8 @@
 
 <% if logged_in? %>
   <div class="form-actions">
-    <%= link_to t('.back', :default => t("helpers.links.back")),
-        messages_path, :class => 'btn'  %>
-    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-        edit_message_path(@message), :class => 'btn' %>
+    <%= link_to t('.back', :default => t("helpers.links.back")), messages_path, :class => 'btn'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_message_path(@message), :class => 'btn' %>
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
         message_path(@message),
         :method => 'delete',
